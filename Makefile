@@ -1,14 +1,14 @@
 NAME = libftprintf.a
 CFLAGS = -Wall -Wextra -Werror
 CC = cc
-SOURCES = ft_putnbr.c ft_puthexa.c nonega.c ft_putchar.c ft_putstr.c ft_printflibft.c
+SOURCES = ft_putnbr.c ft_puthexa.c ft_nonega.c ft_count.c ft_putchar.c ft_post.c ft_putstr.c ft_printflibft.c
 
-OBJECTS = $(SOURCES:%.c=%.o)
+OBJECTS = $(SOURCES:.c=.o)
 
 all : $(NAME)
 
 $(NAME) : $(OBJECTS)
-	ar -r $(NAME) $(OBJECTS)
+	ar -rc $(NAME) $(OBJECTS)
 
 %.o : %.c ft_printf.h
 	$(CC) $(CFLAGS) -c $<

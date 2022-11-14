@@ -6,13 +6,13 @@
 /*   By: mnassi <mnassi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 01:23:44 by mnassi            #+#    #+#             */
-/*   Updated: 2022/11/13 02:39:41 by mnassi           ###   ########.fr       */
+/*   Updated: 2022/11/14 20:18:58 by mnassi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr(int c, int base)
+int	ft_putnbr(unsigned int c, int base)
 {
 	int			len;
 	int			store;
@@ -33,9 +33,6 @@ int	ft_putnbr(int c, int base)
 	}
 	len = j;
 	while (j > 0)
-	{
-		write(1, &arr[j], 1);
-		j--;
-	}
+		write(1, &arr[j--], 1);
 	return (len);
 }
