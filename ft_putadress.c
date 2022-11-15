@@ -1,39 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putadress.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnassi <mnassi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/13 01:23:44 by mnassi            #+#    #+#             */
-/*   Updated: 2022/11/15 01:32:50 by mnassi           ###   ########.fr       */
+/*   Created: 2022/11/15 05:46:33 by mnassi            #+#    #+#             */
+/*   Updated: 2022/11/15 20:43:08 by mnassi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr(unsigned int c, int base)
+int	ft_putadress(unsigned long long frs, int base)
 {
-	int			len;
-	int			stored;
-	char		arr[25];
-	int			j;
+	int		len;
+	int		tem;
+	int		rep;
+	char	arr[64];
 
-	stored = 0;
-	j = 0;
-	if (c == 0)
-		return (write(1, "0", 1), 1);
-	while (c != 0)
+	tem = 0;
+	rep = 0;
+	write(1, "0x", 2);
+	if (!frs)
+		return (write(1, "0", 1), 3);
+	while (frs != 0)
 	{
-		stored = c % base;
-		if (stored >= 10)
-			arr[++j] = stored + 55;
-		if (stored < 10)
-			arr[++j] = stored + 48;
-		c = c / base;
+		rep = frs % base;
+		if (rep < 16)
+			arr[tem++] = MIN[rep];
+		frs /= base;
 	}
-	len = j;
-	while (j > 0)
-		write(1, &arr[j--], 1);
+	len = tem + 2;
+	while (tem > 0)
+		ft_putchar(arr[--tem]);
 	return (len);
 }
+
+// int main()
+// {
+// 	ft_putadress(LONGMAX, 16);
+// 	printf("\n%p\n", LONGMAX);
+// }
