@@ -6,7 +6,7 @@
 /*   By: mnassi <mnassi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 21:40:34 by mnassi            #+#    #+#             */
-/*   Updated: 2022/11/15 20:50:03 by mnassi           ###   ########.fr       */
+/*   Updated: 2022/11/15 23:58:10 by mnassi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,14 +63,4 @@ int	ft_printf(const char *s, ...)
 	}
 	va_end(ap);
 	return (len);
-}
-
-int	main(void)
-{
-	char s[] = "Hello";
-	char po[] = "World";
-	ft_printf("%i  %d  %u %s  %p  %%  %x  %X  %c", 5465, -5465, -152, s, po, 123, 123, 'c');
-	printf("\n");
-	printf("%i  %d  %u %s  %p  %%  %x  %X  %c", 5465, -5465, -152, s, po, 123, 123, 'c');
-	printf("\n");
 }

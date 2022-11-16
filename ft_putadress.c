@@ -6,7 +6,7 @@
 /*   By: mnassi <mnassi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 05:46:33 by mnassi            #+#    #+#             */
-/*   Updated: 2022/11/15 20:43:08 by mnassi           ###   ########.fr       */
+/*   Updated: 2022/11/15 22:29:18 by mnassi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,3 @@ int	ft_putadress(unsigned long long frs, int base)
 		ft_putchar(arr[--tem]);
 	return (len);
 }
-
-// int main()
-// {
-// 	ft_putadress(LONGMAX, 16);
-// 	printf("\n%p\n", LONGMAX);
-// }
